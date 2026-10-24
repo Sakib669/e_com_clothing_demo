@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { useStore } from "@/lib/store";
 import { Product, ProductCategory } from "@/types";
 import { formatBDT } from "@/lib/utils";
@@ -248,8 +248,8 @@ export default function AdminProductsPage() {
                   <tr key={p.id} className="hover:bg-gray-50/60">
                     <td className="p-4">
                       <div className="relative w-12 h-14 bg-gray-100 rounded-md overflow-hidden shrink-0 border border-gray-200">
-                        <Image
-                          src={p.images[0] || "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800"}
+                        <SafeImage
+                          src={p.images[0] || "/images/placeholders/apparel-placeholder.svg"}
                           alt={p.title}
                           fill
                           className="object-cover object-center"
@@ -510,7 +510,7 @@ export default function AdminProductsPage() {
                         key={i}
                         className="relative w-16 h-20 rounded-md overflow-hidden border border-gray-300 group"
                       >
-                        <Image
+                        <SafeImage
                           src={img}
                           alt="Product upload"
                           fill

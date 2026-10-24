@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
@@ -472,8 +472,8 @@ export default function CheckoutPage() {
               {cart.map((item) => (
                 <div key={item.id} className="flex gap-3 text-xs items-center">
                   <div className="relative w-12 h-14 bg-gray-100 rounded-md overflow-hidden shrink-0">
-                    <Image
-                      src={item.image}
+                    <SafeImage
+                      src={item.image || "/images/placeholders/apparel-placeholder.svg"}
                       alt={item.title}
                       fill
                       className="object-cover object-center"

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { ArrowRight, Sparkles, Shield, Clock } from "lucide-react";
 import { useStore } from "@/lib/store";
 
@@ -14,11 +14,12 @@ export default function HeroBanner() {
     <section className="relative bg-[#0A0A0A] text-[#FFFFF0] overflow-hidden border-b border-[#C5A24D]/30">
       {/* Background Image with Dark Vignette */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <Image
-          src={activeBanner?.imageUrl || "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600"}
+        <SafeImage
+          src={activeBanner?.imageUrl || "/images/products/hero-collection.svg"}
           alt="FX Fashion Gallery Luxury Apparel"
           fill
           priority
+          fallbackSrc="/images/products/hero-collection.svg"
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" />

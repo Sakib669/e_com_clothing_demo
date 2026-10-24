@@ -2,7 +2,7 @@
 
 import React, { useState, use } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { notFound, useRouter } from "next/navigation";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
@@ -98,8 +98,8 @@ export default function ProductDetailPage({
         <div className="space-y-4">
           {/* Main Large Image */}
           <div className="relative aspect-[3/4] bg-[#F5F5F0] rounded-2xl overflow-hidden border border-[#C5A24D]/30 shadow-md">
-            <Image
-              src={selectedImage || product.images[0]}
+            <SafeImage
+              src={selectedImage || product.images[0] || "/images/placeholders/apparel-placeholder.svg"}
               alt={product.title}
               fill
               priority
@@ -126,7 +126,7 @@ export default function ProductDetailPage({
                       : "border-transparent opacity-70 hover:opacity-100"
                   }`}
                 >
-                  <Image
+                  <SafeImage
                     src={img}
                     alt={`${product.title} - view ${idx + 1}`}
                     fill

@@ -17,7 +17,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-1-supima-tee.svg",
     ],
     stockQuantity: 45,
     featured: true,
@@ -40,7 +40,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-2-drop-tee.svg",
     ],
     stockQuantity: 32,
     featured: false,
@@ -63,7 +63,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-3-oxford-shirt.svg",
     ],
     stockQuantity: 28,
     featured: true,
@@ -86,7 +86,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1620012253295-c15c429fccf8?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-4-linen-shirt.svg",
     ],
     stockQuantity: 20,
     featured: true,
@@ -109,7 +109,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-5-smart-chinos.svg",
     ],
     stockQuantity: 36,
     featured: true,
@@ -131,7 +131,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-6-selvedge-denim.svg",
     ],
     stockQuantity: 24,
     featured: false,
@@ -154,7 +154,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-7-suede-bomber.svg",
     ],
     stockQuantity: 18,
     featured: true,
@@ -176,7 +176,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1548126032-079a0fb0099d?auto=format&fit=crop&w=800&q=80",
+      "/images/products/prod-8-utility-windbreaker.svg",
     ],
     stockQuantity: 22,
     featured: false,

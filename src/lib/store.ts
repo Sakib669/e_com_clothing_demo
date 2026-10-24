@@ -359,7 +359,7 @@ export const useStore = create<StoreState>()(
       },
     }),
     {
-      name: "fx_fashion_gallery_store_v1",
+      name: "fx_fashion_gallery_store_v2",
       storage: createJSONStorage(() => localStorage),
     }
   )

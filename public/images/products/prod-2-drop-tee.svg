@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416" />
+      <stop offset="50%" stop-color="#0A0A0C" />
+      <stop offset="100%" stop-color="#050507" />
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9E7F30" />
+      <stop offset="50%" stop-color="#F5D061" />
+      <stop offset="100%" stop-color="#C5A24D" />
+    </linearGradient>
+
+    <!-- Subtle Radial Glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#C5A24D" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#C5A24D" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Luxury Canvas Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+
+  <!-- Radial Atmosphere Glow -->
+  <circle cx="400" cy="450" r="380" fill="url(#centerGlow)" />
+
+  <!-- Elegant Architectural Border -->
+  <rect x="25" y="25" width="750" height="950" fill="none" stroke="#C5A24D" stroke-width="1.5" stroke-opacity="0.35" rx="12" />
+  <rect x="35" y="35" width="730" height="930" fill="none" stroke="#C5A24D" stroke-width="0.75" stroke-opacity="0.2" rx="8" />
+
+  <!-- Corner Flourishes -->
+  <path d="M45 65 L45 45 L65 45" fill="none" stroke="#C5A24D" stroke-width="2" />
+  <path d="M755 65 L755 45 L735 45" fill="none" stroke="#C5A24D" stroke-width="2" />
+  <path d="M45 935 L45 955 L65 955" fill="none" stroke="#C5A24D" stroke-width="2" />
+  <path d="M755 935 L755 955 L735 955" fill="none" stroke="#C5A24D" stroke-width="2" />
+
+  <!-- Top Brand Crest -->
+  <g transform="translate(400, 95)">
+    <text y="0" font-family="'Cinzel', serif, 'Playfair Display', Georgia" font-size="14" font-weight="700" letter-spacing="6" fill="url(#goldGrad)" text-anchor="middle">
+      FX FASHION GALLERY
+    </text>
+    <text y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" letter-spacing="4" fill="#A1A1AA" text-anchor="middle">
+      BESPOKE LUXURY • DHAKA
+    </text>
+    <line x1="-120" y1="32" x2="120" y2="32" stroke="#C5A24D" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="0" cy="32" r="3" fill="#F59E0B" />
+  </g>
+
+  <!-- Garment Illustration Centerpiece -->
+  <g id="garment-group">
+    
+      <!-- T-Shirt Silhouette -->
+      <path d="M280 240 L350 240 C365 290 435 290 450 240 L520 240 L590 340 L520 380 L490 330 L490 680 L310 680 L310 330 L280 380 L210 340 Z" 
+            fill="#262626" stroke="#C5A24D" stroke-width="4" stroke-linejoin="round" />
+      <!-- Crewneck Collar Ring -->
+      <path d="M350 240 C370 280 430 280 450 240" fill="none" stroke="#C5A24D" stroke-width="6" stroke-linecap="round" />
+      <path d="M355 248 C372 278 428 278 445 248" fill="none" stroke="#3F3F46" stroke-width="3" />
+      <!-- Sleeves & Hem stitches -->
+      <line x1="225" y1="358" x2="270" y2="330" stroke="#C5A24D" stroke-width="2" stroke-dasharray="4,4" />
+      <line x1="575" y1="358" x2="530" y2="330" stroke="#C5A24D" stroke-width="2" stroke-dasharray="4,4" />
+      <line x1="315" y1="665" x2="485" y2="665" stroke="#C5A24D" stroke-width="2" stroke-dasharray="5,5" />
+      <!-- Embroidered FX Crest -->
+      <circle cx="430" cy="380" r="14" fill="none" stroke="#C5A24D" stroke-width="2" />
+      <text x="430" y="384" font-family="'Cinzel', serif, Georgia" font-size="10" font-weight="bold" fill="#C5A24D" text-anchor="middle">FX</text>
+    
+  </g>
+
+  <!-- Bottom Spec & Label Card -->
+  <g transform="translate(400, 830)">
+    <!-- Decorative Divider Ribbon -->
+    <line x1="-160" y1="-20" x2="160" y2="-20" stroke="#C5A24D" stroke-width="1" stroke-opacity="0.5" />
+    <polygon points="0,-25 5,-20 0,-15 -5,-20" fill="#F59E0B" />
+
+    <text y="10" font-family="'Cinzel', serif, 'Playfair Display', Georgia" font-size="20" font-weight="800" fill="#FFFFF0" text-anchor="middle" letter-spacing="1">
+      HEAVYWEIGHT DROP TEE
+    </text>
+    <text y="35" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="middle" letter-spacing="3">
+      CATEGORY: T-SHIRTS
+    </text>
+    <text y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#71717A" text-anchor="middle" letter-spacing="1.5">
+      100% AUTHENTIC QUALITY GUARANTEED
+    </text>
+  </g>
+</svg>

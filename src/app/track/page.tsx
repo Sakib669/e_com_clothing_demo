@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
 import { Order, OrderStatus } from "@/types";

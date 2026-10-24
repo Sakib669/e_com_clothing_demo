@@ -2,7 +2,7 @@
 
 import React, { use } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { notFound } from "next/navigation";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
@@ -94,8 +94,8 @@ export default function OrderConfirmationPage({
               <div key={idx} className="py-3 flex items-center justify-between gap-4 text-xs">
                 <div className="flex items-center gap-3">
                   <div className="relative w-12 h-14 bg-gray-100 rounded-lg overflow-hidden shrink-0">
-                    <Image
-                      src={item.image}
+                    <SafeImage
+                      src={item.image || "/images/placeholders/apparel-placeholder.svg"}
                       alt={item.title}
                       fill
                       className="object-cover object-center"

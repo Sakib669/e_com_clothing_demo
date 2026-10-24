@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { Product } from "@/types";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
@@ -37,8 +37,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="double-bezel-inner flex flex-col h-full">
         {/* Product Image & Badges */}
         <Link href={`/products/${product.slug}`} className="relative block aspect-[3/4] bg-[#F5F5F0] overflow-hidden">
-          <Image
-            src={product.images[0] || "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800"}
+          <SafeImage
+            src={product.images[0] || "/images/placeholders/apparel-placeholder.svg"}
             alt={product.title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

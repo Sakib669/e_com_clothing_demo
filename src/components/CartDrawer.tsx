@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
 import {
@@ -110,8 +110,8 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   className="p-3 bg-[#FFFFFF] rounded-xl border border-[#C5A24D]/20 shadow-xs flex gap-3 items-center"
                 >
                   <div className="relative w-16 h-20 bg-gray-100 rounded-lg overflow-hidden shrink-0">
-                    <Image
-                      src={item.image}
+                    <SafeImage
+                      src={item.image || "/images/placeholders/apparel-placeholder.svg"}
                       alt={item.title}
                       fill
                       className="object-cover object-center"

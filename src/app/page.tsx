@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { useStore } from "@/lib/store";
 import HeroBanner from "@/components/HeroBanner";
 import ProductCard from "@/components/ProductCard";
@@ -81,10 +81,11 @@ export default function HomePage() {
               href={`/products?category=${cat.slug}`}
               className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-gray-100 border border-[#C5A24D]/25 shadow-sm hover:shadow-xl transition-all"
             >
-              <Image
+              <SafeImage
                 src={cat.image}
                 alt={cat.name}
                 fill
+                fallbackSrc="/images/placeholders/apparel-placeholder.svg"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/30 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
@@ -168,10 +169,11 @@ export default function HomePage() {
             </div>
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#C5A24D]/30 shadow-2xl">
-              <Image
+              <SafeImage
                 src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200"
                 alt="FX Fashion Gallery Craftsmanship"
                 fill
+                fallbackSrc="/images/products/hero-collection.svg"
                 className="object-cover object-center"
               />
             </div>

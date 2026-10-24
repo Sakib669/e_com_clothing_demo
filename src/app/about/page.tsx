@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, ShieldCheck, Heart, Award, ArrowRight } from "lucide-react";
 

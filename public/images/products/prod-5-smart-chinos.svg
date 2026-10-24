@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416" />
+      <stop offset="50%" stop-color="#0A0A0C" />
+      <stop offset="100%" stop-color="#050507" />
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9E7F30" />
+      <stop offset="50%" stop-color="#F5D061" />
+      <stop offset="100%" stop-color="#C5A24D" />
+    </linearGradient>
+
+    <!-- Subtle Radial Glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#C5A24D" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#C5A24D" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Luxury Canvas Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+
+  <!-- Radial Atmosphere Glow -->
+  <circle cx="400" cy="450" r="380" fill="url(#centerGlow)" />
+
+  <!-- Elegant Architectural Border -->
+  <rect x="25" y="25" width="750" height="950" fill="none" stroke="#C5A24D" stroke-width="1.5" stroke-opacity="0.35" rx="12" />
+  <rect x="35" y="35" width="730" height="930" fill="none" stroke="#C5A24D" stroke-width="0.75" stroke-opacity="0.2" rx="8" />
+
+  <!-- Corner Flourishes -->
+  <path d="M45 65 L45 45 L65 45" fill="none" stroke="#C5A24D" stroke-width="2" />
+  <path d="M755 65 L755 45 L735 45" fill="none" stroke="#C5A24D" stroke-width="2" />
+  <path d="M45 935 L45 955 L65 955" fill="none" stroke="#C5A24D" stroke-width="2" />
+  <path d="M755 935 L755 955 L735 955" fill="none" stroke="#C5A24D" stroke-width="2" />
+
+  <!-- Top Brand Crest -->
+  <g transform="translate(400, 95)">
+    <text y="0" font-family="'Cinzel', serif, 'Playfair Display', Georgia" font-size="14" font-weight="700" letter-spacing="6" fill="url(#goldGrad)" text-anchor="middle">
+      FX FASHION GALLERY
+    </text>
+    <text y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" letter-spacing="4" fill="#A1A1AA" text-anchor="middle">
+      BESPOKE LUXURY • DHAKA
+    </text>
+    <line x1="-120" y1="32" x2="120" y2="32" stroke="#C5A24D" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="0" cy="32" r="3" fill="#F59E0B" />
+  </g>
+
+  <!-- Garment Illustration Centerpiece -->
+  <g id="garment-group">
+    
+      <!-- Trousers Silhouette -->
+      <path d="M310 240 L490 240 L490 320 L470 680 L415 680 L400 420 L385 680 L330 680 L310 320 Z" 
+            fill="#1E293B" stroke="#C5A24D" stroke-width="4" stroke-linejoin="round" />
+      <!-- Waistband & Belt Loops -->
+      <line x1="310" y1="270" x2="490" y2="270" stroke="#C5A24D" stroke-width="3" />
+      <rect x="330" y="240" width="8" height="30" fill="#334155" stroke="#C5A24D" stroke-width="1" />
+      <rect x="396" y="240" width="8" height="30" fill="#334155" stroke="#C5A24D" stroke-width="1" />
+      <rect x="462" y="240" width="8" height="30" fill="#334155" stroke="#C5A24D" stroke-width="1" />
+      <!-- Crease / Pleat Lines -->
+      <line x1="365" y1="290" x2="365" y2="670" stroke="#C5A24D" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
+      <line x1="435" y1="290" x2="435" y2="670" stroke="#C5A24D" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
+      <!-- Slanted Pockets -->
+      <line x1="315" y1="280" x2="350" y2="330" stroke="#C5A24D" stroke-width="2.5" />
+      <line x1="485" y1="280" x2="450" y2="330" stroke="#C5A24D" stroke-width="2.5" />
+    
+  </g>
+
+  <!-- Bottom Spec & Label Card -->
+  <g transform="translate(400, 830)">
+    <!-- Decorative Divider Ribbon -->
+    <line x1="-160" y1="-20" x2="160" y2="-20" stroke="#C5A24D" stroke-width="1" stroke-opacity="0.5" />
+    <polygon points="0,-25 5,-20 0,-15 -5,-20" fill="#F59E0B" />
+
+    <text y="10" font-family="'Cinzel', serif, 'Playfair Display', Georgia" font-size="20" font-weight="800" fill="#FFFFF0" text-anchor="middle" letter-spacing="1">
+      TAILORED SMART CHINOS
+    </text>
+    <text y="35" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="middle" letter-spacing="3">
+      CATEGORY: PANTS
+    </text>
+    <text y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#71717A" text-anchor="middle" letter-spacing="1.5">
+      100% AUTHENTIC QUALITY GUARANTEED
+    </text>
+  </g>
+</svg>
