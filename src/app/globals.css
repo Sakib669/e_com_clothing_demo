@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #FFFFF0;
+  --surface: #FFFFFF;
+  --title: #0A0A0A;
+  --price: #262626;
+  --discount: #D90429;
+  --btn-amber: #F59E0B;
+  --btn-amber-text: #0A0A0A;
+  --gold-divider: #C5A24D;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--title);
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFFF0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A24D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9E7F30;
+}
+
+/* Luxury Gold Hairline Dividers */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #C5A24D 50%, transparent 100%);
+}
+
+.gold-divider-solid {
+  height: 1px;
+  background-color: #C5A24D;
+  opacity: 0.35;
+}
+
+/* Double Bezel Product Card Frame */
+.double-bezel-card {
+  background-color: #FFFFF0;
+  border: 1px solid rgba(197, 162, 77, 0.25);
+  border-radius: 1rem;
+  padding: 0.375rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.double-bezel-card:hover {
+  border-color: rgba(197, 162, 77, 0.6);
+  box-shadow: 0 12px 30px -10px rgba(197, 162, 77, 0.2);
+  transform: translateY(-2px);
+}
+
+.double-bezel-inner {
+  background-color: #FFFFFF;
+  border-radius: calc(1rem - 0.375rem);
+  box-shadow: 0 2px 8px rgba(10, 10, 10, 0.04);
+  overflow: hidden;
+}
+
+/* Luxury Pill Button */
+.btn-amber-pill {
+  background-color: #F59E0B;
+  color: #0A0A0A;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-amber-pill:hover {
+  background-color: #D97706;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  transform: scale(1.02);
+}
+
+.btn-amber-pill:active {
+  transform: scale(0.98);
+}
