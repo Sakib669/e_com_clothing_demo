@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { useStore } from "@/lib/store";
 import HeroBanner from "@/components/HeroBanner";
 import ProductCard from "@/components/ProductCard";
+import { MotionSection } from "@/components/MotionWrappers";
 import {
   ArrowRight,
   Sparkles,
@@ -62,7 +64,7 @@ export default function HomePage() {
       <HeroBanner />
 
       {/* 2. Category Showcases */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <MotionSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C5A24D]/15 text-[#9E7F30] text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
@@ -75,37 +77,45 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {categories.map((cat) => (
-            <Link
+          {categories.map((cat, idx) => (
+            <motion.div
               key={cat.slug}
-              href={`/products?category=${cat.slug}`}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-gray-100 border border-[#C5A24D]/25 shadow-sm hover:shadow-xl transition-all"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
-              <SafeImage
-                src={cat.image}
-                alt={cat.name}
-                fill
-                fallbackSrc="/images/placeholders/apparel-placeholder.svg"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/30 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
-                <span className="text-[10px] uppercase font-bold text-[#F59E0B] tracking-widest">
-                  Explore
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FFFFF0] group-hover:text-[#F59E0B] transition-colors">
-                  {cat.name}
-                </h3>
-                <p className="text-[11px] text-gray-300 font-light hidden sm:block">
-                  {cat.desc}
-                </p>
-              </div>
-            </Link>
+              <Link
+                href={`/products?category=${cat.slug}`}
+                className="group relative block rounded-2xl overflow-hidden aspect-[4/5] bg-gray-100 border border-[#C5A24D]/25 shadow-sm hover:shadow-xl transition-all"
+              >
+                <SafeImage
+                  src={cat.image}
+                  alt={cat.name}
+                  fill
+                  fallbackSrc="/images/placeholders/apparel-placeholder.svg"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/30 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
+                  <span className="text-[10px] uppercase font-bold text-[#F59E0B] tracking-widest">
+                    Explore
+                  </span>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FFFFF0] group-hover:text-[#F59E0B] transition-colors">
+                    {cat.name}
+                  </h3>
+                  <p className="text-[11px] text-gray-300 font-light hidden sm:block">
+                    {cat.desc}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </MotionSection>
 
       {/* 3. Featured Products Showcase */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <MotionSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-[#C5A24D]/25">
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A24D]">
@@ -129,7 +139,7 @@ export default function HomePage() {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-      </section>
+      </MotionSection>
 
       {/* 4. Luxury Brand Story / Editorial Spotlight */}
       <section className="bg-[#0A0A0A] text-[#FFFFF0] py-16 sm:py-24 border-y border-[#C5A24D]/40">

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, MessageCircle, Clock, CheckCircle } from "lucide-react";
 import { useStore } from "@/lib/store";
 
@@ -38,7 +39,12 @@ export default function ContactPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Contact Info Cards */}
-        <div className="lg:col-span-5 space-y-4">
+        <motion.div
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 space-y-4"
+        >
           <div className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#C5A24D]/30 shadow-xs space-y-4 text-xs">
             <h2 className="font-serif text-base font-bold text-[#0A0A0A] border-b border-gray-100 pb-3">
               Official Contact Points
@@ -91,10 +97,15 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Message Form */}
-        <div className="lg:col-span-7 bg-[#FFFFFF] p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-xs space-y-6">
+        <motion.div
+          initial={{ opacity: 0, x: 16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-7 bg-[#FFFFFF] p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-xs space-y-6"
+        >
           <h2 className="font-serif text-lg font-bold text-[#0A0A0A]">
             Send Us a Message
           </h2>
@@ -151,7 +162,7 @@ export default function ContactPage() {
               </button>
             </form>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

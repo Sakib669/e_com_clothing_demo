@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
@@ -35,8 +36,6 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     message?: string;
   }>({});
 
-  if (!isOpen) return null;
-
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   let discount = 0;
@@ -57,16 +56,28 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-[#0A0A0A]/60 backdrop-blur-xs transition-opacity"
-        onClick={onClose}
-      />
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-[#0A0A0A]/60 backdrop-blur-xs"
+            onClick={onClose}
+          />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FFFFF0] border-l border-[#C5A24D]/30 shadow-2xl flex flex-col">
-          {/* Header */}
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              className="w-screen max-w-md bg-[#FFFFF0] border-l border-[#C5A24D]/30 shadow-2xl flex flex-col"
+            >
+              {/* Header */}
           <div className="p-4 sm:p-6 border-b border-[#C5A24D]/25 bg-[#FFFFFF] flex items-center justify-between">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-[#F59E0B]" />
@@ -246,8 +257,10 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               </Link>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
-  );
+  )}
+</AnimatePresence>
+);
 }

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { useStore } from "@/lib/store";
 import ProductCard from "@/components/ProductCard";
 import { ProductCategory } from "@/types";
@@ -170,7 +171,12 @@ function ProductsContent() {
 
       {/* Product Grid */}
       {filteredProducts.length === 0 ? (
-        <div className="text-center py-20 bg-[#FFFFFF] rounded-2xl border border-[#C5A24D]/20 shadow-xs">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="text-center py-20 bg-[#FFFFFF] rounded-2xl border border-[#C5A24D]/20 shadow-xs"
+        >
           <p className="font-serif text-lg font-bold text-[#0A0A0A] mb-2">
             No matching clothing found
           </p>
@@ -187,13 +193,18 @@ function ProductsContent() {
           >
             Show All Products
           </button>
-        </div>
+        </motion.div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <AnimatePresence>
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
       )}
     </div>
   );

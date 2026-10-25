@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { Product } from "@/types";
 import { useStore } from "@/lib/store";
@@ -33,7 +34,14 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="double-bezel-card group relative flex flex-col h-full">
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -3, transition: { duration: 0.25, ease: "easeOut" } }}
+      className="double-bezel-card group relative flex flex-col h-full"
+    >
       <div className="double-bezel-inner flex flex-col h-full">
         {/* Product Image & Badges */}
         <Link href={`/products/${product.slug}`} className="relative block aspect-[3/4] bg-[#F5F5F0] overflow-hidden">
@@ -147,6 +155,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

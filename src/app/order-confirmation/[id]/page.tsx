@@ -2,6 +2,7 @@
 
 import React, { use } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { notFound } from "next/navigation";
 import { useStore } from "@/lib/store";
@@ -44,7 +45,12 @@ export default function OrderConfirmationPage({
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8 print:p-0">
       {/* Success Badge & Header */}
-      <div className="text-center space-y-3 bg-[#FFFFFF] p-8 rounded-2xl border border-[#C5A24D]/30 shadow-sm print:border-none print:shadow-none">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center space-y-3 bg-[#FFFFFF] p-8 rounded-2xl border border-[#C5A24D]/30 shadow-sm print:border-none print:shadow-none"
+      >
         <div className="w-16 h-16 rounded-full bg-green-100 border border-green-300 text-green-600 flex items-center justify-center mx-auto">
           <CheckCircle className="w-8 h-8" />
         </div>
@@ -61,10 +67,15 @@ export default function OrderConfirmationPage({
         <div className="inline-block mt-2 px-4 py-1.5 rounded-full bg-[#FFFFF0] border border-[#C5A24D]/40 text-xs font-mono font-bold text-[#0A0A0A]">
           Order ID: #{order.id}
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Order Details Receipt */}
-      <div className="bg-[#FFFFFF] rounded-2xl border border-[#C5A24D]/25 shadow-xs overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        className="bg-[#FFFFFF] rounded-2xl border border-[#C5A24D]/25 shadow-xs overflow-hidden"
+      >
         {/* Receipt Header */}
         <div className="p-6 border-b border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-gray-50/50">
           <div>
@@ -176,7 +187,7 @@ export default function OrderConfirmationPage({
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Action Buttons */}
       <div className="flex flex-wrap items-center justify-between gap-4 print:hidden">

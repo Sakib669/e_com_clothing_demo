@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,7 +35,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-[#FFFFF0] text-[#0A0A0A] antialiased selection:bg-[#F59E0B] selection:text-[#0A0A0A]">
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <WhatsAppFloat />
       </body>

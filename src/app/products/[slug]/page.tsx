@@ -2,6 +2,7 @@
 
 import React, { useState, use } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { notFound, useRouter } from "next/navigation";
 import { useStore } from "@/lib/store";
@@ -95,7 +96,12 @@ export default function ProductDetailPage({
       {/* Main Product Showcase Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
         {/* Left Column: Image Gallery */}
-        <div className="space-y-4">
+        <motion.div
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-4"
+        >
           {/* Main Large Image */}
           <div className="relative aspect-[3/4] bg-[#F5F5F0] rounded-2xl overflow-hidden border border-[#C5A24D]/30 shadow-md">
             <SafeImage
@@ -136,10 +142,15 @@ export default function ProductDetailPage({
               ))}
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Right Column: Product Details & Purchase Actions */}
-        <div className="space-y-6">
+        <motion.div
+          initial={{ opacity: 0, x: 16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-6"
+        >
           {/* Category & Title */}
           <div>
             <span className="text-xs uppercase font-bold tracking-[0.2em] text-[#C5A24D]">
@@ -344,7 +355,7 @@ export default function ProductDetailPage({
               {product.description}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

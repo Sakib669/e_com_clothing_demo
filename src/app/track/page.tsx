@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useStore } from "@/lib/store";
 import { formatBDT } from "@/lib/utils";
 import { Order, OrderStatus } from "@/types";
@@ -80,20 +81,27 @@ export default function TrackOrderPage() {
       </div>
 
       {/* Search Result */}
-      {hasSearched && (
-        <div>
-          {!searchedOrder ? (
-            <div className="bg-[#FFFFFF] p-8 rounded-2xl border border-[#C5A24D]/25 text-center space-y-3 shadow-xs">
-              <AlertCircle className="w-10 h-10 text-amber-500 mx-auto" />
-              <h2 className="font-serif text-base font-bold text-[#0A0A0A]">
-                No Order Found for &ldquo;{searchInput}&rdquo;
-              </h2>
-              <p className="text-xs text-gray-500 max-w-sm mx-auto">
-                Please verify the Order ID or phone number. If you just placed your order, it may take a few moments to synchronize.
-              </p>
-            </div>
-          ) : (
-            <div className="bg-[#FFFFFF] rounded-2xl border border-[#C5A24D]/25 shadow-xs overflow-hidden space-y-6 p-6 sm:p-8">
+      <AnimatePresence mode="wait">
+        {hasSearched && (
+          <motion.div
+            key={searchedOrder ? searchedOrder.id : "not-found"}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {!searchedOrder ? (
+              <div className="bg-[#FFFFFF] p-8 rounded-2xl border border-[#C5A24D]/25 text-center space-y-3 shadow-xs">
+                <AlertCircle className="w-10 h-10 text-amber-500 mx-auto" />
+                <h2 className="font-serif text-base font-bold text-[#0A0A0A]">
+                  No Order Found for &ldquo;{searchInput}&rdquo;
+                </h2>
+                <p className="text-xs text-gray-500 max-w-sm mx-auto">
+                  Please verify the Order ID or phone number. If you just placed your order, it may take a few moments to synchronize.
+                </p>
+              </div>
+            ) : (
+              <div className="bg-[#FFFFFF] rounded-2xl border border-[#C5A24D]/25 shadow-xs overflow-hidden space-y-6 p-6 sm:p-8">
               {/* Order Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-6">
                 <div>
@@ -245,8 +253,9 @@ export default function TrackOrderPage() {
               </div>
             </div>
           )}
-        </div>
+        </motion.div>
       )}
-    </div>
-  );
+    </AnimatePresence>
+  </div>
+);
 }

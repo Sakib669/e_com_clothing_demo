@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/lib/store";
@@ -176,7 +177,12 @@ export default function CheckoutPage() {
 
       <form onSubmit={handlePlaceOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Columns: Delivery & Payment Details */}
-        <div className="lg:col-span-7 space-y-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-7 space-y-8"
+        >
           {/* Section 1: Customer Information */}
           <div className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#C5A24D]/25 shadow-xs space-y-4">
             <h2 className="font-serif text-base font-bold text-[#0A0A0A] flex items-center gap-2 border-b border-gray-100 pb-3">
@@ -458,10 +464,15 @@ export default function CheckoutPage() {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column: Order Summary & Placement */}
-        <div className="lg:col-span-5 space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 space-y-6"
+        >
           <div className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#C5A24D]/25 shadow-xs space-y-6 sticky top-24">
             <h2 className="font-serif text-base font-bold text-[#0A0A0A] border-b border-gray-100 pb-3">
               Order Summary ({cart.reduce((s, i) => s + i.quantity, 0)} Items)
@@ -537,7 +548,7 @@ export default function CheckoutPage() {
               <span>Safe & Secure Bangladesh Delivery Guaranteed</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </form>
     </div>
   );

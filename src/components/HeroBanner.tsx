@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SafeImage from "@/components/SafeImage";
 import { ArrowRight, Sparkles, Shield, Clock } from "lucide-react";
 import { useStore } from "@/lib/store";
@@ -26,7 +27,12 @@ export default function HeroBanner() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
-        <div className="max-w-2xl space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-2xl space-y-6"
+        >
           {/* Eyebrow badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFF0]/10 border border-[#C5A24D]/50 backdrop-blur-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
@@ -79,7 +85,7 @@ export default function HeroBanner() {
               <span>bKash & Nagad Accepted</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
